@@ -66,6 +66,7 @@ async def run_news_agent(config: dict) -> str:
         prompt=prompt,
         options=ClaudeAgentOptions(
             allowed_tools=["WebSearch"],
+            cwd="/tmp",
         ),
     ):
         if isinstance(message, ResultMessage):
