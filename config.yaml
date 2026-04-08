@@ -1,0 +1,41 @@
+# ──────────────────────────────────────────────────────────────
+# 뉴스 클리핑 에이전트 설정 파일
+# ──────────────────────────────────────────────────────────────
+
+# 수집 모드
+# - web_search : Claude가 직접 웹 검색 (권장, ANTHROPIC_API_KEY 필요)
+# - rss        : RSS 피드에서 기사 수집 후 Claude로 요약
+mode: web_search
+
+# ── 관심 주제 (web_search 모드에서 사용) ──────────────────────
+# 검색할 뉴스 주제를 구체적으로 적을수록 좋은 결과를 얻을 수 있습니다.
+topics:
+  - "인공지능 AI 최신 뉴스"
+  - "한국 IT 스타트업 동향"
+  - "글로벌 기술 트렌드"
+  # - "국내 경제 뉴스"
+  # - "환경 기후 뉴스"
+  # - "의료 바이오 헬스케어"
+
+# ── RSS 피드 목록 (rss 모드에서 사용) ─────────────────────────
+rss_feeds:
+  - url: "https://feeds.bbci.co.uk/news/technology/rss.xml"
+    name: "BBC Technology"
+  - url: "https://rss.cnn.com/rss/edition_technology.rss"
+    name: "CNN Technology"
+  - url: "https://techcrunch.com/feed/"
+    name: "TechCrunch"
+  # - url: "https://feeds.reuters.com/reuters/technologyNews"
+  #   name: "Reuters Technology"
+
+# ── 뉴스 요약 설정 ───────────────────────────────────────────
+# 주제당 선택할 뉴스 개수
+articles_per_topic: 3
+
+# 응답 언어: "Korean" 또는 "English"
+language: Korean
+
+# ── 결과 저장 설정 ───────────────────────────────────────────
+# 실행 시 --save 플래그를 사용하거나 아래를 true로 설정하면 파일로 저장됩니다.
+auto_save: false
+output_dir: ./digests

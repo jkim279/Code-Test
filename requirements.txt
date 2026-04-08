@@ -1,0 +1,4 @@
+anthropic>=0.49.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+feedparser>=6.0.0  # RSS 모드 사용 시 필요
